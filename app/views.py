@@ -65,5 +65,3 @@ def logout(request):
     auth.logout(request)
     return redirect('home')
 
-def dashboard(request):
-    return render(request, 'dashboard.html')
