@@ -30,6 +30,10 @@
 	<div class="col-md-6">
 		<div class="card border-0">
 			<div class="card-body">
+				<img
+					src="{{ post.featured_image.url }}"
+					class="card-img-top mb-3"
+					alt="{{ post.title }}" />
 				<a
 					href="{% url 'blogs' post.slug %}"
 					class="text-dark">
@@ -58,6 +62,10 @@
 			{% for post in posts %}
 			<div class="card border-0">
 				<div class="card-body">
+					<img
+						src="{{ post.featured_image.url }}"
+						class="card-img-top mb-3"
+						alt="{{ post.title }}" />
 					<a
 						href="{% url 'blogs' post.slug %}"
 						class="text-dark">

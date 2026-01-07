@@ -10,6 +10,10 @@
 	<div class="col-md-6">
 		<div class="card border-0">
 			<div class="card-body">
+				<img
+					src="{{ i.featured_image.url }}"
+					class="card-img-top mb-3"
+					alt="{{ i.title }}" />
 				<h3>
 					<a
 						href="{% url 'blogs' i.slug  %}"

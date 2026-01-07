@@ -34,27 +34,13 @@
 					<td>{{ user.first_name }} {{ user.last_name }}</td>
 					<td>{{ user.username }}</td>
 					<td>{{ user.email }}</td>
+					<td>{% if user.is_active %} ✅ {% else %} ❌{% endif %}</td>
+					<td>{% if user.is_staff %} ✅ {% else %} ❌{% endif %}</td>
+					<td>{% if user.is_superuser %} ✅ {% else %} ❌{% endif %}</td>
 					<td>
-						{% if user.is_active %}<i class="fa fa-check text-success"></i
-						>{% else %}<i class="fa fa-times text-danger"></i>{% endif %}
-					</td>
-					<td>
-						{% if user.is_staff %}<i class="fa fa-check text-success"></i
-						>{% else %}<i class="fa fa-times text-danger"></i>{% endif %}
-					</td>
-					<td>
-						{% if user.is_superuser %}<i
-							class="fa fa-check text-success"></i
-						>{% else %}<i class="fa fa-times text-danger"></i>{% endif %}
-					</td>
-					<td>
-						<a href="{% url 'edit_user' user.id %}"
-							><i class="fa fa-edit text-success"></i
-						></a>
+						<a href="{% url 'edit_user' user.id %}">✏️</a>
 						&nbsp;
-						<a href="{% url 'delete_user' user.id %}"
-							><i class="fa fa-trash text-danger"></i
-						></a>
+						<a href="{% url 'delete_user' user.id %}">🗑️</a>
 					</td>
 				</tr>
 				{% endfor %}
